@@ -4,4 +4,4 @@ const port = process.env.PORT || 4000
 app.post('/webhook', (req, res) => res.sendStatus(200))
 app.listen(port)
 var abc = 'abcd';
-console.log(abc);
+document.write('aaa')
