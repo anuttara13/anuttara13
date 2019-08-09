@@ -1,6 +1,5 @@
 <?php
     echo "123 ปลาฉลามขึ้นบก";
-    //$accessToken = "kUem8fmXO+8ASQNXRZvvRjYswsTEhEBJxHqR4r2LsO0Mf9iF8wcSGUIdqh6DINCzMCSoND4PI4uGTRzI7ex4xx15ieWE2YqARc8po7Nnc8eKcPXJl3goDhH4x65MQkELVPH7hSAgWZ1bvtoKdTkNwgdB04t89/1O/w1cDnyilFU=";//copy Channel access token ตอนที่ตั้งค่ามาใส่
     $accessToken = "/tYuk8adxGovtLSJAseG785SiSoKn4rfr/No6CEau1/9unThL3JHBqqYCFjcydPh0oMDHStxES+h/yS9f2lhsRSwxWrwGPiUJFaejSAsta78nf7wnayLgOYuTnG5Zp0MBjESwS+R0KH3TryK3BWoWgdB04t89/1O/w1cDnyilFU=";
     $content = file_get_contents('php://input');
     $arrayJson = json_decode($content, true);
