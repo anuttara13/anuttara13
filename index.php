@@ -1,6 +1,6 @@
 <?php
     echo "123 ปลาฉลามขึ้นบก";
-    $accessToken = "/tYuk8adxGovtLSJAseG785SiSoKn4rfr/No6CEau1/9unThL3JHBqqYCFjcydPh0oMDHStxES+h/yS9f2lhsRSwxWrwGPiUJFaejSAsta78nf7wnayLgOYuTnG5Zp0MBjESwS+R0KH3TryK3BWoWgdB04t89/1O/w1cDnyilFU=";
+    $accessToken = "S+CIhdBflEfX9SKse0b9LmEgqfpTsPEOEHAHASE+fuChZKxMuwgGYuoY6Yuqoz7g0oMDHStxES+h/yS9f2lhsRSwxWrwGPiUJFaejSAsta480dGZ6ftqKRJNLwNOCMkM+PAPedj81q+UdPArPXWuggdB04t89/1O/w1cDnyilFU=";
     $content = file_get_contents('php://input');
     $arrayJson = json_decode($content, true);
     
