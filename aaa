@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <div id="tasks" class="panel panel-default">
+      <div class="panel-heading">
+        <span class="panel-title"> <i class="pad icon-gear"></i>Tasks</span>
+      </div>
+      <div class="panel-body panel-trim"></div>
+      <div class="panel-body no-padding">
+        <table class="table footable toggle-arrow-small" data-page-navigation=".paginate" data-page-size="20">
+          <thead>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Isidra</td>
+              <td><a href="#">Boudreaux</a></td>
+              <td>Traffic Court Referee</td>
+            </tr>
+            <tr>
+              <td>Shona</td>
+              <td>Woldt</td>
+              <td><a href="#">http://embed.plnkr.co/PYELgBc0xOpvH4lePXKu/</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="panel-footer"></div>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+        $('.footable').footable();
+
+        $('table').on('click', '.row-add, .row-delete', function(e) {
+          e.preventDefault();
+
+          //get the footable object
+          var table = $('.footable');
+          var footable = $(table).data('footable');
+
+          if ($(this).hasClass('row-add')) {
+            //Find last row
+            var lastRow = $(table).find('tbody tr:last');
+            footable.removeRow(lastRow);
+
+            //build up the row we are wanting to add
+            var newRow =
+              '<tr><td>Isidra</td><td><a href="#">Boudreaux</a></td></tr>';
+
+            //add it
+            footable.appendRow(newRow);
+          } else {
+            //get the row we are wanting to delete
+            var row = $(this).parents('tr:first');
+
+            //delete the row
+            footable.removeRow(row);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
