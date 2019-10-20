@@ -1,0 +1,69 @@
+https://www.tutor4dev.com/articles/2015-09-24-es6-basic-class-oop.html
+--------------------------------------------------------------------------------
+การเขียน Constructors
+constructor เป็น method พิเศษที่จะทำงานเมื่อมีการสร้าง instance ใหม่ โดยทั่วไปเรามักใช้สำหรับกำหนดค่าเริ่มต้นให้กับ object ครับ
+--------------------------------------------------------------------------------
+Classes
+อันนี้ถือเป็นสิ่งที่ผมชอบมากที่สุดใน ES6 เลยครับ เราสามารถเขียน js แบบเป็น class 
+ได้เหมือนๆ กับ PHP หรือ Java เลย ส่วน syntax นั้นก็คล้ายกันมากเลยครับ 
+มี constructor, สามารถ extends class อื่นๆ ได้ มี static method เรียกว่าถูกใจสาย OOP อย่างแน่นอน
+-------------------------------------------------------------------------------
+เป็นที่ทราบกันดีว่า JavaScript นั้นเป็นภาษาแบบ prototype-based 
+เราจำลองฟังก์ชันให้เป็นคลาสและสร้างเมธอดผ่าน prototype 
+นั่นเป็นสิ่งที่เราทำมากันเสมอ ใน ES2015 ได้นำการสร้างคลาสเข้ามาสู่ไวยากรณ์ทางภาษา 
+แต่นั่นไม่ได้หมายความว่า prototype-based แบบเดิมๆจะหายไป
+-----------------------------------------------------------------------------
+Classes
+ปกติใน ES5 เราจะไม่มีคลาส ทำให้ JavaScript ยังไม่เป็น OOP เต็มตัว ใช้ความสามารถของ prototype แทน แต่ถ้าเป็น ES6 เราสามารถสร้าง class ได้แล้ว มีทั้ง constructor และ extends เหมือนกับภาษาอื่นๆอย่าง Java
+ซึ่งเมื่อก่อนเราสร้างคลาส ด้วย function ประมาณนี้
+
+function Person(name) {  
+  this.name = name;
+}
+
+Person.prototype.sayHi = function() {  
+  console.log('Hi, my name is ' + this.name);
+}
+
+แต่ถ้าเป็น ES6 เราสามารถใช้ Class syntax และ constructor ได้เลย แบบนี้
+
+class Person {  
+  constructor(name) {
+    this.name = name;
+  }
+
+  sayHi() {
+    console.log('Hi, my name is ' + this.name);
+  }
+}
+----------------------------------------------------------------------------------------
+// ประกาศคลาสผ่านคีย์เวิร์ด class
+class Person {
+  constructor(name, age) {
+    this.name = name
+    this.age = age
+  }
+
+  static species = 'Homo sapiens sapiens'
+
+  walk() {
+    console.log("I'm walking...")
+  }
+
+  print() {
+    console.log(`My name is ${this.name}`)
+    console.log(`I'm ${this.age}'`)
+  }
+}
+
+const person = new Person('MyName', 99)
+person.walk() // I'm walking...
+person.print() // My name is MyName \n I'm 99'
+
+// static method เรียกตรงผ่านคลาสได้เลย
+console.log(Person.species)
+
+// สำหรับการทำ inheritance สามารถใช้คีย์เวิร์ด extends ดังนี้
+class Female extends Person {
+
+}
